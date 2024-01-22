@@ -1,0 +1,6 @@
+apiVersion: v2
+description: A Helm chart to build and config a working Saprk instance
+keywords:
+- pattern
+name: spark
+version: 0.0.1

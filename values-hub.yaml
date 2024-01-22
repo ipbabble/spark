@@ -6,7 +6,10 @@ clusterGroup:
     - open-cluster-management
     - vault
     - golang-external-secrets
-    - redhat-ods-operator
+    - openshift-storage
+    - redhat-ods-operator:
+        operatorGroup: true
+        targetNamespaces:
     - spark-operator
     - config-demo
     - hello-world
@@ -17,6 +20,10 @@ clusterGroup:
       namespace: open-cluster-management
       #channel: release-2.8
       #csv: advanced-cluster-management.v2.6.1
+
+    odf:
+      name: odf-operator
+      namespace: openshift-storage
 
     ods:
       name: rhods-operator
@@ -79,6 +86,12 @@ clusterGroup:
       project: hub
       path: common/golang-external-secrets
 
+    spark-config:
+      name: spark-config
+      namespace: spark-helm-operator
+      project: data-science
+      path: charts/all/spark
+      
     config-demo:
       name: config-demo
       namespace: config-demo
