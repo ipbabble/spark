@@ -6,6 +6,8 @@ clusterGroup:
     - open-cluster-management
     - vault
     - golang-external-secrets
+    - redhat-ods-operator
+    - spark-operator
     - config-demo
     - hello-world
 
@@ -13,8 +15,18 @@ clusterGroup:
     acm:
       name: advanced-cluster-management
       namespace: open-cluster-management
-      channel: release-2.8
+      #channel: release-2.8
       #csv: advanced-cluster-management.v2.6.1
+
+    ods:
+      name: rhods-operator
+      channel: alpha
+      namespace: redhat-ods-operator
+
+    spark:
+      name: spark-helm-operator
+      channel: alpha
+      namespace: spark-operator
 
   projects:
     - hub
